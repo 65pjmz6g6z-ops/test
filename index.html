@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nederländerna vs Sverige | FIFA World Cup 2026</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --gold:#F4C400;
+    --gold-dark:#D9A800;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+}
+
+body{
+    background:#000;
+    color:#fff;
+    font-family:'Oswald',sans-serif;
+    overflow:hidden;
+}
+
+/* Bakgrund */
+
+.background{
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at center,
+    rgba(255,255,255,0.05) 0%,
+    rgba(0,0,0,0.85) 55%,
+    rgba(0,0,0,1) 100%);
+}
+
+.background:after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+    radial-gradient(circle at center,
+    transparent 40%,
+    rgba(0,0,0,.9) 100%);
+}
+
+.container{
+    position:relative;
+    z-index:2;
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+/* Logo */
+
+.logo{
+    text-align:center;
+    margin-bottom:10px;
+}
+
+.logo-top{
+    font-size:24px;
+    letter-spacing:3px;
+}
+
+.logo-year{
+    font-size:120px;
+    font-weight:700;
+    line-height:0.85;
+}
+
+.logo-hosts{
+    font-size:22px;
+    letter-spacing:2px;
+}
+
+.logo-hosts span:nth-child(1){
+    color:#ff5555;
+}
+
+.logo-hosts span:nth-child(2){
+    color:#39d96f;
+}
+
+.logo-hosts span:nth-child(3){
+    color:#3ea0ff;
+}
+
+/* Grupp */
+
+.group{
+    margin-top:5px;
+    color:var(--gold);
+    font-size:46px;
+    font-weight:600;
+    text-shadow:0 0 20px rgba(244,196,0,.5);
+}
+
+.group::before,
+.group::after{
+    content:"";
+    display:inline-block;
+    width:140px;
+    height:3px;
+    background:var(--gold);
+    vertical-align:middle;
+    margin:0 25px;
+}
+
+/* Matchrad */
+
+.match-row{
+    margin-top:25px;
+    width:90%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.team{
+    width:38%;
+    text-align:center;
+}
+
+.flag{
+    width:320px;
+    height:200px;
+    object-fit:cover;
+
+    border-radius:12px;
+
+    box-shadow:
+    0 0 20px rgba(255,255,255,.1),
+    0 0 40px rgba(255,255,255,.05);
+}
+
+.team-name{
+    margin-top:18px;
+    font-size:64px;
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+.vs{
+    font-size:90px;
+    font-weight:700;
+    color:var(--gold);
+
+    text-shadow:
+    0 0 20px rgba(244,196,0,.8),
+    0 0 40px rgba(244,196,0,.4);
+}
+
+/* Info */
+
+.info{
+    margin-top:18px;
+
+    display:flex;
+    gap:40px;
+
+    font-size:28px;
+    color:#ddd;
+}
+
+.info span{
+    color:var(--gold);
+}
+
+/* Rubrik */
+
+.count-title{
+    margin-top:25px;
+    color:var(--gold);
+    font-size:42px;
+    letter-spacing:2px;
+}
+
+/* Nedräkning */
+
+.countdown{
+    margin-top:25px;
+
+    display:flex;
+    gap:25px;
+}
+
+.card{
+    width:210px;
+    height:190px;
+
+    border:3px solid var(--gold);
+
+    border-radius:10px;
+
+    background:
+    linear-gradient(
+    180deg,
+    rgba(255,255,255,.03),
+    rgba(255,255,255,.01)
+    );
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    box-shadow:
+    0 0 15px rgba(244,196,0,.15);
+}
+
+.number{
+    color:var(--gold);
+    font-size:92px;
+    line-height:1;
+    font-weight:700;
+}
+
+.label{
+    margin-top:8px;
+    color:#fff;
+    font-size:28px;
+    letter-spacing:1px;
+}
+
+/* Fotboll */
+
+.ball{
+    margin-top:28px;
+    font-size:72px;
+
+    animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+.footer{
+    position:absolute;
+    bottom:20px;
+    left:30px;
+
+    font-size:24px;
+    color:#fff;
+}
+
+.footer-right{
+    position:absolute;
+    bottom:20px;
+    right:30px;
+
+    font-size:24px;
+    color:var(--gold);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<div class="container">
+
+<div class="logo">
+
+<div class="logo-top">
+FIFA WORLD CUP
+</div>
+
+<div class="logo-year">
+2026
+</div>
+
+<div class="logo-hosts">
+<span>CANADA</span> |
+<span>MEXICO</span> |
+<span>USA</span>
+</div>
+
+</div>
+
+<div class="group">
+GRUPP F
+</div>
+
+<div class="match-row">
+
+<div class="team">
+
+<img
+class="flag"
+src="https://flagcdn.com/w640/nl.png">
+
+<div class="team-name">
+NEDERLÄNDERNA
+</div>
+
+</div>
+
+<div class="vs">
+VS
+</div>
+
+<div class="team">
+
+<img
+class="flag"
+src="https://flagcdn.com/w640/se.png">
+
+<div class="team-name">
+SVERIGE
+</div>
+
+</div>
+
+</div>
+
+<div class="info">
+
+<div><span>📅</span> 20 JUNI 2026</div>
+
+<div><span>🕒</span> 19:00</div>
+
+<div><span>🏟️</span> HOUSTON STADIUM</div>
+
+</div>
+
+<div class="count-title">
+TID KVAR TILL AVSPARK
+</div>
+
+<div class="countdown">
+
+<div class="card">
+<div id="days" class="number">00</div>
+<div class="label">DAGAR</div>
+</div>
+
+<div class="card">
+<div id="hours" class="number">00</div>
+<div class="label">TIMMAR</div>
+</div>
+
+<div class="card">
+<div id="minutes" class="number">00</div>
+<div class="label">MINUTER</div>
+</div>
+
+<div class="card">
+<div id="seconds" class="number">00</div>
+<div class="label">SEKUNDER</div>
+</div>
+
+</div>
+
+<div class="ball">
+⚽
+</div>
+
+<div class="footer">
+#NEDSWE
+</div>
+
+<div class="footer-right">
+#HEJASVERIGE
+</div>
+
+</div>
+
+<script>
+
+const kickoff =
+new Date("2026-06-20T19:00:00+02:00");
+
+function updateCountdown(){
+
+const now = new Date();
+
+const diff = kickoff - now;
+
+if(diff <= 0){
+
+document.body.innerHTML = `
+<div style="
+background:black;
+color:white;
+width:100vw;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:120px;
+font-family:Oswald,sans-serif;
+">
+⚽ MATCHSTART ⚽
+</div>
+`;
+
+return;
+}
+
+const days =
+Math.floor(diff / (1000*60*60*24));
+
+const hours =
+Math.floor(
+(diff % (1000*60*60*24))
+/
+(1000*60*60)
+);
+
+const minutes =
+Math.floor(
+(diff % (1000*60*60))
+/
+(1000*60)
+);
+
+const seconds =
+Math.floor(
+(diff % (1000*60))
+/
+1000
+);
+
+document.getElementById("days").textContent =
+String(days).padStart(2,"0");
+
+document.getElementById("hours").textContent =
+String(hours).padStart(2,"0");
+
+document.getElementById("minutes").textContent =
+String(minutes).padStart(2,"0");
+
+document.getElementById("seconds").textContent =
+String(seconds).padStart(2,"0");
+
+}
+
+updateCountdown();
+
+setInterval(updateCountdown,1000);
+
+</script>
+
+</body>
+</html>
