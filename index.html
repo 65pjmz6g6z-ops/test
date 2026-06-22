@@ -1,10 +1,11 @@
+```html
 <!DOCTYPE html>
 <html lang="sv">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Nederländerna vs Sverige | FIFA World Cup 2026</title>
+<title>Japan vs Sverige | FIFA World Cup 2026</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
 
@@ -22,23 +23,18 @@
 }
 
 html,body{
-     margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+    width:100%;
+    height:100%;
+    overflow:hidden;
 }
 
 body{
     background:#000;
     color:#fff;
     font-family:'Oswald',sans-serif;
-    overflow:hidden;
-    min-height: 100vh;
-    min-height: 100dvh;
+    min-height:100vh;
+    min-height:100dvh;
 }
-
-/* Bakgrund */
 
 .background{
     position:fixed;
@@ -64,16 +60,15 @@ body{
     position:relative;
     z-index:2;
 
-     width: 100vw;
-    height: 100vh;
-    height: 100dvh;
-    display: flex;
-    flex-direction: column;
+    width:100vw;
+    height:100vh;
+    height:100dvh;
+
+    display:flex;
+    flex-direction:column;
     align-items:center;
     justify-content:center;
 }
-
-/* Logo */
 
 .logo{
     text-align:center;
@@ -108,8 +103,6 @@ body{
     color:#3ea0ff;
 }
 
-/* Grupp */
-
 .group{
     margin-top:5px;
     color:var(--gold);
@@ -128,8 +121,6 @@ body{
     vertical-align:middle;
     margin:0 25px;
 }
-
-/* Matchrad */
 
 .match-row{
     margin-top:25px;
@@ -174,8 +165,6 @@ body{
     0 0 40px rgba(244,196,0,.4);
 }
 
-/* Info */
-
 .info{
     margin-top:18px;
 
@@ -190,16 +179,12 @@ body{
     color:var(--gold);
 }
 
-/* Rubrik */
-
 .count-title{
     margin-top:25px;
     color:var(--gold);
     font-size:42px;
     letter-spacing:2px;
 }
-
-/* Nedräkning */
 
 .countdown{
     margin-top:25px;
@@ -246,17 +231,13 @@ body{
     letter-spacing:1px;
 }
 
-/* Fotboll */
-
 .ball{
     margin-top:28px;
     font-size:72px;
-
     animation:bounce 2s infinite;
 }
 
 @keyframes bounce{
-
     0%,100%{
         transform:translateY(0);
     }
@@ -273,6 +254,21 @@ body{
 
     font-size:24px;
     color:#fff;
+}
+
+.made-by{
+    position:absolute;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+
+    font-size:18px;
+    color:var(--gold);
+
+    letter-spacing:1px;
+    text-transform:uppercase;
+
+    text-shadow:0 0 10px rgba(244,196,0,.4);
 }
 
 .footer-right{
@@ -321,10 +317,11 @@ GRUPP F
 
 <img
 class="flag"
-src="https://flagcdn.com/w640/nl.png">
+src="https://flagcdn.com/w640/jp.png"
+alt="Japans flagga">
 
 <div class="team-name">
-NEDERLÄNDERNA
+JAPAN
 </div>
 
 </div>
@@ -337,7 +334,8 @@ VS
 
 <img
 class="flag"
-src="https://flagcdn.com/w640/se.png">
+src="https://flagcdn.com/w640/se.png"
+alt="Sveriges flagga">
 
 <div class="team-name">
 SVERIGE
@@ -349,11 +347,11 @@ SVERIGE
 
 <div class="info">
 
-<div><span>📅</span> 20 JUNI 2026</div>
+<div><span>📅</span> 26 JUNI 2026</div>
 
-<div><span>🕒</span> 19:00</div>
+<div><span>🕒</span> 01:00</div>
 
-<div><span>🏟️</span> HOUSTON STADIUM</div>
+<div><span>🏟️</span> DALLAS STADIUM, ARLINGTON</div>
 
 </div>
 
@@ -390,7 +388,11 @@ TID KVAR TILL AVSPARK
 </div>
 
 <div class="footer">
-#NEDSWE
+#JPNSWE
+</div>
+
+<div class="made-by">
+Made by Sporron
 </div>
 
 <div class="footer-right">
@@ -402,12 +404,11 @@ TID KVAR TILL AVSPARK
 <script>
 
 const kickoff =
-new Date("2026-06-20T19:00:00+02:00");
+new Date("2026-06-26T01:00:00+02:00");
 
 function updateCountdown(){
 
 const now = new Date();
-
 const diff = kickoff - now;
 
 if(diff <= 0){
@@ -431,27 +432,20 @@ font-family:Oswald,sans-serif;
 return;
 }
 
-const days =
-Math.floor(diff / (1000*60*60*24));
+const days = Math.floor(diff / (1000*60*60*24));
 
-const hours =
-Math.floor(
-(diff % (1000*60*60*24))
-/
+const hours = Math.floor(
+(diff % (1000*60*60*24)) /
 (1000*60*60)
 );
 
-const minutes =
-Math.floor(
-(diff % (1000*60*60))
-/
+const minutes = Math.floor(
+(diff % (1000*60*60)) /
 (1000*60)
 );
 
-const seconds =
-Math.floor(
-(diff % (1000*60))
-/
+const seconds = Math.floor(
+(diff % (1000*60)) /
 1000
 );
 
@@ -470,10 +464,10 @@ String(seconds).padStart(2,"0");
 }
 
 updateCountdown();
-
 setInterval(updateCountdown,1000);
 
 </script>
 
 </body>
 </html>
+```
